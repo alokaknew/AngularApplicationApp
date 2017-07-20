@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Assignment</title>
+        <link href= "cssfile.css" rel="stylesheet" />   
+        <script src = "angular.min.js"></script>
+        <script src = "jsfile.js"></script>
+    </head>
+    <body>
+        <div ng-app="AssignmentApp" ng-controller="AssignmentController">
+            <div >
+              <input type="button" class="showbutton" value="Show Form" name="show" ng-click="activeFom(1)">    
+            </div>  
+            <div class="fom" ng-class="{'fomActive':isFomActive}">
+                     <span class="close" ng-click="isFomActive = false">X</span>
+                <form name="userForm">
+                <div class="controls">
+                        <div class="row" style="padding-left:20px;height:40px ; margin-top:40px">
+<!--
+                             <div class="form-group" ng-class="{ 'has-error' : userForm.fullname.$invalid && !userForm.fullname.$pristine }">
+                            <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">Enter Full Name</span>
+                                <input type="text" name="fullname" ng-model="fullname" placeholder="Enter full name" style="width:40% ; border-radius:10px" />
+                                  <p ng-show="userForm.fullname.$invalid && !userForm.fullname.$pristine" class="help-block">You name is required.</p>
+                            </div>
+-->
+                             <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">Enter Full Name</span>
+                                <input type="text" name="fullname" ng-model="fullname" placeholder="Enter full name" style="width:40% ; border-radius:10px" />
+                        </div>
+                </div>
+                         <div class="row" style="padding-left:20px;height:40px ; margin-top:10px">
+                            <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">User Name</span>
+                                <input type="text" name="username" ng-model="username" placeholder="Enter Username" style="width:40% ; border-radius:10px" />
+                        </div>
+
+
+<!--
+                         <div class="row" style="padding-left:20px;height:40px  ; margin-top:10px">
+                            <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">Enter Email</span>
+                                <input type="text" name="email" id="mail" ng-model="email" placeholder="Enter Email" style="width:40% ; border-radius:10px" required />
+                        </div>
+-->
+    <div class="row" style="padding-left:20px;height:40px  ; margin-top:10px">               
+        <div class="control-group"ng-class="{true: 'error'}[submitted && form.email.$invalid]" style="margin-top:8px">
+            <label class="spanlabel" for="email" style="width:35% ; margin-top:10px ; color:black">Your email address</label>
+            <div class="controls" style="margin-top:-15px">
+                <input type="email" name="email" ng-model="email" style="width:137% ; border-radius:10px ;  margin-left:122% ; height:30px ; margin-top:-40%" required/>
+                <span class="help-inline" ng-show="submitted && form.email.$error.required">Required</span>
+                <span class="help-inline" ng-show="submitted && form.email.$error.email">Invalid email</span>
+            </div>
+        </div>
+   </div>
+
+
+                         <div class="row" style="padding-left:20px;height:40px ; margin-top:10px">
+                            <span class="spanlabel" style="color:black ; width:35% ; margin-top:16px">Enter Password</span>
+                                <input type="password" name="password" id="pass" ng-model="password" placeholder="Enter password" style="width:40% ; border-radius:10px" required />
+                        </div>
+
+                          <div class="row" style="margin-top:30px">
+                                    <span style="width:30% ; margin-left:200px">
+                                        <input type="submit"   name="submit" value="Submit" ng-click="Submit()" style="width:80% ; background:yellow ; border-radius:5px; padding:12px ; margin-left:15px ; margin-left:15px" ng-click = "submitted=true" />
+                                    </span>
+
+                          </div>
+                    
+                </form>
+                
+                
+            </div>
+            
+            
+        </div>
+    </body> 
+</html>
+

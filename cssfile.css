@@ -1,0 +1,69 @@
+.showbutton{
+   height: 40px;
+   width: 115px;
+   border-radius: 5px;
+   margin-top: 30px;
+   margin-left: 280px;
+   font-family: serif;
+   font-size:larger;
+}
+.fom{
+    width:600px;
+    height: 400px;
+    background-color: grey;
+    border-radius: 5px;
+    position: absolute;
+    top:15%;
+    padding: 8px;
+    transition-duration: 1.5s;
+    left:-1400px;
+}
+
+.fomActive {
+    left:35%;
+}
+
+ .close{
+            position:absolute;
+            top:0px;
+            right:0%;
+            color:black;
+            font-size:20px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+ .spanlabel{
+            font-family:serif;
+            font-size:20px;
+            color:white;
+            width:40%;
+        }
+        .row{
+           width:100% ; 
+           display:inline-flex;
+        }
+.showdetails{
+    height: 200px;
+    width:300px;
+    border-radius: 10px;
+    background-color: bisque;
+    top:98px;
+    color: black;
+    left:-1000px;
+    position: absolute;
+    transition-duration: 1.5s;
+}
+
+.displayactive{
+    left:10%;
+}
+
+
+
+
+
+
+
+
+
