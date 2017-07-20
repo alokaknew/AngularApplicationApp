@@ -1,0 +1,92 @@
+<html>
+    
+    <head>
+        <title>Assignment</title>
+        <link href= "cssfile.css" rel="stylesheet" />   
+        <script src = "angular.min.js"></script>
+        <script src = "jsfile.js"></script>
+    </head>
+<body>
+<div ng-app="AssignmentApp" ng-controller="AssignmentController">
+ 
+     <div >
+              <input type="button" class="showbutton" value="Show Form" name="show" ng-click="activeFom(1)">    
+    </div>  
+
+    
+    <div class="fom" ng-class="{'fomActive':isFomActive}">
+         <span class="close" ng-click="isFomActive = false">X</span>
+    <form name="userForm" ng-submit="submitForm()" novalidate>
+        
+        
+         <div class="row" style="padding-left:20px;height:40px ; margin-top:10px">
+                            <span class="spanlabel" style="color:black ; width:24% ; margin-top:16px">Enter Full Name</span>
+                                <input type="text" name="fullname" ng-model="user.fullname" placeholder="Enter full name " style="width:44% ; border-radius:10px"/>
+        </div>
+        
+        
+        
+
+    
+
+        <div class="row" style="padding-left:20px;height:40px ; margin-top:40px">
+        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }" style="widht:100%">
+             <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">User Name</span>
+            <input type="text" name="username" class="form-control" ng-model="user.username" placeholder="Enter Username" style="width:54% ; border-radius:10px ; height:36px ; margin-left:52px"  required>
+            <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">You name is required.</p>
+        </div>
+        </div>
+        
+        
+         
+        <div class="row" style="padding-left:20px;height:40px ; margin-top:40px">
+        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }" style="width:100%">
+           <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">Email</span>
+            <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Enter Email" style="width:44% ; border-radius:10px ; height:36px ; margin-left:90px">
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+        </div>
+        
+        
+        <div class="row" style="padding-left:20px;height:40px ; margin-top:40px">
+        <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }" style="width:100%">
+           <span class="spanlabel" style="color:black ; width:35% ; margin-top:10px">Password</span>
+            <input type="password" name="password" class="form-control" placeholder="enter password" ng-model="user.password" ng-minlength="4" ng-maxlength="10"style="width:44% ; border-radius:10px ; height:36px ; margin-left:64px">
+            <p ng-show="userForm.password.$error.minlength" class="help-block">Password is too short.</p>
+            <p ng-show="userForm.password.$error.maxlength" class="help-block">password is too long.</p>
+        </div>
+        </div>      
+          
+             <div class="row" style="margin-top:30px">
+                                        <span style="width:30% ; margin-left:200px">
+                                            <button type="submit"   ng-disabled="userForm.$invalid" style="width:80% ; background:yellow ; border-radius:5px; padding:12px ; margin-left:15px ; margin-left:15px">Submit</button>
+                                        </span>
+            </div>
+    </form>
+    </div>
+    <div class="showdetails"  ng-class="{'displayactive' : isDisplayActive}">
+         <span class="close" ng-click="isDisplayActive = false">X</span>
+        <div class="rowtoshow" style="height:20px ; width:100% ;margin:20px ">
+            <span style="height:20px ; widht:40%">Full Name :- </span>
+            <span style="height:20px ; widht:40%">{{details.Fullname}}</span>
+        </div>
+        <div class="rowtoshow" style="height:20px ; width:100% ; margin:20px">
+            <span style="height:20px ; widht:40%">User Name :- </span>
+            <span style="height:20px ; widht:40%">{{details.username}}</span>
+        </div>
+        <div class="rowtoshow" style="height:20px ; width:100% ; margin:20px">
+            <span style="height:20px ; widht:40%">Email :- </span>
+            <span style="height:20px ; widht:40%">{{details.email}}</span>
+        </div>
+        
+        
+        
+      
+    </div>
+    
+    
+    
+  </div>
+
+    </body>
+    </html>
