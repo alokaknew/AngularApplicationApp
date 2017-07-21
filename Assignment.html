@@ -66,17 +66,15 @@
     </div>
     <div class="showdetails"  ng-class="{'displayactive' : isDisplayActive}">
          <span class="close" ng-click="isDisplayActive = false">X</span>
-        <div class="rowtoshow" style="height:20px ; width:100% ;margin:20px ">
-            <span style="height:20px ; widht:40%">Full Name :- </span>
-            <span style="height:20px ; widht:40%">{{details.Fullname}}</span>
+       <div class="heading" style="width:97% ; height:14% ; margin:5px ; margin-top:28px ">
+             <div style="width:31% ; display:inline-flex">Name</div>
+             <div style="width:31% ; display:inline-flex">UserName</div>
+             <div style="width:31% ; display:inline-flex">Email</div>
         </div>
-        <div class="rowtoshow" style="height:20px ; width:100% ; margin:20px">
-            <span style="height:20px ; widht:40%">User Name :- </span>
-            <span style="height:20px ; widht:40%">{{details.username}}</span>
-        </div>
-        <div class="rowtoshow" style="height:20px ; width:100% ; margin:20px">
-            <span style="height:20px ; widht:40%">Email :- </span>
-            <span style="height:20px ; widht:40%">{{details.email}}</span>
+        <div class="heading" style="width:97% ; height:14% ; margin:5px ; margin-top:0px ">
+             <div style="width:31% ; display:inline-flex">{{details.Fullname}}</div>
+             <div style="width:31% ; display:inline-flex">{{details.username}}</div>
+             <div style="width:31% ; display:inline-flex">{{details.email}}</div>
         </div>
         
         
